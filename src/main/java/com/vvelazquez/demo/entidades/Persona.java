@@ -1,16 +1,33 @@
 package com.vvelazquez.demo.entidades;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(schema = "curso1", name="persona")
 public class Persona {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	
 	private String nombre;
 	
+	@Column(name="apellido_paterno")
 	private String apellido1;
 	
+	@Column(name="apellido_materno")
 	private String apellido2;
 	
 	private Short edad;
+
+	public Persona() {
+		super();
+	}
 	
 	public Persona(Integer id, String nombre, String apellido1, String apellido2, Short edad) {
 		super();
